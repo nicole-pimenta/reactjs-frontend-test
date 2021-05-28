@@ -31,7 +31,7 @@
 
 
 ## Prazo
-  7 dias
+  3 dias
 
 ## Avaliação
 
