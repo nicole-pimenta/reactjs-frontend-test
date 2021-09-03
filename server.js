@@ -9,9 +9,12 @@ app.db = router.db;
 
 const rules = auth.rewriter({
   "/users*": "/600/users$1",
-  "/products*": "/640/products$1"
+  "/products*": "/640/products$1",
 });
 
+var cors = require("cors");
+
+app.use(cors());
 app.use(rules);
 app.use(auth);
 app.use(router);
