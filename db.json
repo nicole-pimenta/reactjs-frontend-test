@@ -13,6 +13,13 @@
       "name": "Luigi",
       "age": 35,
       "id": 2
+    },
+    {
+      "email": "teste@mail.com",
+      "password": "$2a$10$e4jvbgkmn0Nca40ianD8hOWx.bSPJyYI/izD2Q9LuA33Kubt27ihS",
+      "username": "teste",
+      "passwordConfirm": "123456",
+      "id": 3
     }
   ],
   "products": [
