@@ -27,7 +27,7 @@ const HeaderMobile = () => {
           <Link className="link-nav" to="/login">
             Login
           </Link>
-          <Link className="link-nav" to="/signup">
+          <Link className="link-nav" to="/register">
             Cadastro
           </Link>
         </HeaderNav>

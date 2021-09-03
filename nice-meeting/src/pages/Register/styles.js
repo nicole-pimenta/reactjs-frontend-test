@@ -8,14 +8,22 @@ export const MainContainer = styled.div`
 `;
 
 export const HeaderContainer = styled.div`
-  padding: 30px 40px 0px;
-  height: 8vh;
+  padding: 20px 70px 5px;
 
-  .easyMeeting {
+  .niceMeeting {
     color: var(--violetCore);
     font-size: 2rem;
     font-weight: 600;
     padding-left: 30px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 20px 5px 20px;
+
+    .niceMeeting {
+      font-size: 1.5rem;
+      padding-left: 20px;
+    }
   }
 `;
 
@@ -24,8 +32,8 @@ export const Container = styled.div`
   align-items: center;
   justify-content: stretch;
 
-  @media (max-width: 1100px) {
-    height: 63vh;
+  @media (max-width: 1000px) {
+    height: 75vh;
   }
 `;
 
@@ -38,7 +46,7 @@ export const Background = styled.div`
 
   section {
     height: 100vh;
-    width: 90%;
+    width: 95%;
     background: url(${RegisterImage}) no-repeat right;
   }
 `;
@@ -107,7 +115,9 @@ export const AnimationContainer = styled.div`
     text-align: center;
   }
 
-  span {
+  span { 
+    font-size: 1.1rem;
+    color:var(--darkBlue)
   }
 
   form {
@@ -143,7 +153,7 @@ export const AnimationContainer = styled.div`
     a {
       font-weight: bolder;
       color: var(--violetCore);
-      font-size: 18px;
+      font-size: 1.5rem;
     }
 
     .error {

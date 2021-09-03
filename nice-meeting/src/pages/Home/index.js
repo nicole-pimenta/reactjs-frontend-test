@@ -1,5 +1,6 @@
 import { HomeContainer, HeroContainer, AboutContainer } from "./styles";
 import Meeting from "../../assets/meeting.svg";
+import Meeting2 from "../../assets/meeting2.svg";
 import Ellipse1 from "../../assets/Ellipse1.svg";
 import Ellipse2 from "../../assets/Ellipse2.svg";
 import Header from "../../components/Header";
@@ -26,7 +27,7 @@ const Home = () => {
           <h1>Bora reunir?! </h1>
           <p>
             A plataforma que vai te ajudar a promover, transmitir,
-            disponibilizar o sua melhor reunião
+            disponibilizar a sua melhor reunião !
           </p>
           <Button>Quero testar!</Button>
         </div>
@@ -40,6 +41,7 @@ const Home = () => {
         </div>
         <figure>
           <img src={Meeting} alt="bulb" />
+          <img src={Meeting2} alt="bulb" />
         </figure>
         <div id="infoApp" className="aboutInfo">
           <h4>POR QUE NICEMEETING?</h4>

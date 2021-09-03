@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   padding: 30px 0px;
 
-  .easyHabits {
+  .niceMeeting {
     color: var(--violetCore);
     font-size: 2rem;
     font-weight: 600;

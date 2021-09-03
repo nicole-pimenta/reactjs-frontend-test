@@ -21,8 +21,16 @@ const Register = () => {
   const history = useHistory();
 
   const schema = yup.object().shape({
-    username: yup.string().required("Nome de usuário obrigatório"),
-    password: yup.string().required("Senha obrigatória"),
+    username: yup.string().required("Campo obrigatório"),
+    email: yup.string().email("Email inválido").required("Campo obrigatório"),
+    password: yup
+      .string()
+      .required("Campo obrigatório")
+      .min(6, "A senha deve conter no minimo 6 caracteres"),
+    passwordConfirm: yup
+      .string()
+      .required("Campo obrigatório")
+      .oneOf([yup.ref("password"), null], "As senhas devem ser iguais"),
   });
 
   const {
@@ -41,7 +49,7 @@ const Register = () => {
     <MainContainer>
       <HeaderContainer>
         <Link to="/">
-          <div className="easyMeeting">EasyMeeting</div>
+          <div className="niceMeeting">NiceMeeting</div>
         </Link>
       </HeaderContainer>
       <Container>

@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-//
 import { Link, useHistory } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 import TextField from "@material-ui/core/TextField";
@@ -14,9 +13,10 @@ import {
   HeaderContainer,
   MainContainer,
 } from "./styles";
+import { useAuth } from "../../Providers/Auth";
 
 const Login = () => {
-  // const { logIn } = useAuth();
+  const { logIn } = useAuth();
 
   const history = useHistory();
 
@@ -33,15 +33,14 @@ const Login = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmitFunction = (data) => {
-    //logIn(data, history);
-    reset();
+    logIn(data, history);
   };
 
   return (
     <MainContainer>
       <HeaderContainer>
         <Link to="/">
-          <div className="easyMeeting">NiceMeeting</div>
+          <div className="niceMeeting">NiceMeeting</div>
         </Link>
       </HeaderContainer>
       <Container>
@@ -66,7 +65,8 @@ const Login = () => {
               <div className="error"> {errors.password?.message}</div>
               <Button type="submit"> ENTRAR </Button>
               <p>
-                Não tem uma conta ? Faça seu <Link to="/signup">Cadastro</Link>
+                Não tem uma conta ? Faça seu{" "}
+                <Link to="/register">Cadastro</Link>
               </p>
             </form>
             <span>Página inicial</span>

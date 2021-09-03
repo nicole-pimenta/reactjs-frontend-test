@@ -14,7 +14,7 @@ const Header = () => {
     <div>
       <HeaderContainer>
         <Link to="/">
-          <div className="easyHabits">NiceMeeting</div>
+          <div className="niceMeeting">NiceMeeting</div>
         </Link>
         <HeaderNav>
           <Anchor className="link-nav" to="/#infoApp">
@@ -23,7 +23,7 @@ const Header = () => {
           <Anchor className="link-nav" to="/#infoApp">
             Contato
           </Anchor>
-          <Button colorSchema onClick={() => handleNavigation("/signup")}>
+          <Button colorSchema onClick={() => handleNavigation("/register")}>
             Cadastro
           </Button>
           <Button onClick={() => handleNavigation("/login")}>Login</Button>
