@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import LoginImage from "../../assets/Login.svg";
+import RegisterImage from "../../assets/register.svg";
 
 export const MainContainer = styled.div`
   height: 100vh;
@@ -38,8 +38,8 @@ export const Background = styled.div`
 
   section {
     height: 100vh;
-    width: 85%;
-    background: url(${LoginImage}) no-repeat center;
+    width: 90%;
+    background: url(${RegisterImage}) no-repeat right;
   }
 `;
 
@@ -57,7 +57,7 @@ export const Content = styled.div`
 
   .MuiSvgIcon-root {
     font-size: 2.5rem;
-    color: var(--violteCore);
+    color: var(--violetCore);
   }
 
   @media (max-width: 1100px) {
@@ -75,7 +75,7 @@ export const Content = styled.div`
 const apppearFromLeft = keyframes`
 from {
   opacity : 0 ;
-  transform: translateX(-50px)
+  transform: translateX(60px)
 } 
 
 to{
@@ -84,8 +84,7 @@ to{
 } 
 
 .MuiSvgIcon-root{
-  font-size:2.5rem;
-  
+  font-size:2.5rem
 }
 `;
 

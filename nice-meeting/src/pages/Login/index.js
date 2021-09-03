@@ -41,7 +41,7 @@ const Login = () => {
     <MainContainer>
       <HeaderContainer>
         <Link to="/">
-          <div className="easyMeeting">EasyMeeting</div>
+          <div className="easyMeeting">NiceMeeting</div>
         </Link>
       </HeaderContainer>
       <Container>
@@ -71,7 +71,7 @@ const Login = () => {
             </form>
             <span>Página inicial</span>
             <p>
-              <Link to="/dashboard">
+              <Link to="/">
                 <HomeIcon />
               </Link>
             </p>
