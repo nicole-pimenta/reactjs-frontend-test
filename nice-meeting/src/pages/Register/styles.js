@@ -102,6 +102,7 @@ export const AnimationContainer = styled.div`
   align-items: center;
   justify-content: center;
   animation: ${apppearFromLeft} 1s;
+
   h1 {
     margin-bottom: 25px;
     color: #5965e0;
@@ -115,9 +116,9 @@ export const AnimationContainer = styled.div`
     text-align: center;
   }
 
-  span { 
+  span {
     font-size: 1.1rem;
-    color:var(--darkBlue)
+    color: var(--darkBlue);
   }
 
   form {
@@ -172,7 +173,6 @@ export const AnimationContainer = styled.div`
     }
     h1 {
       margin-bottom: 10px;
-      color: var(--)
       font-size: 40px;
     }
   }

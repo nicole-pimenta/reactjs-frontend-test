@@ -1,8 +1,9 @@
+import api from "../../services/api";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-//
 import { Link, useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 import HomeIcon from "@material-ui/icons/Home";
 import TextField from "@material-ui/core/TextField";
 import {
@@ -16,8 +17,6 @@ import {
 } from "./styles";
 
 const Register = () => {
-  // const { logIn } = useAuth();
-
   const history = useHistory();
 
   const schema = yup.object().shape({
@@ -36,13 +35,18 @@ const Register = () => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const onSubmitFunction = (data) => {
-    //logIn(data, history);
-    reset();
+  const onSubmitFunction = ({ username, email, password }) => {
+    const newUser = { username, email, password };
+    api
+      .post("/register", newUser)
+      .then((_) => {
+        toast.success("Sucesso ao criar a conta");
+        return history.push("/login");
+      })
+      .catch((err) => toast.error("Erro ao criar a conta ,tente outro email"));
   };
 
   return (

@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Link, useHistory } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 import TextField from "@material-ui/core/TextField";
+import { useAuth } from "../../Providers/Auth";
 import {
   Container,
   Background,
@@ -13,27 +14,26 @@ import {
   HeaderContainer,
   MainContainer,
 } from "./styles";
-import { useAuth } from "../../Providers/Auth";
 
 const Login = () => {
-  const { logIn } = useAuth();
+  const { handleLogin } = useAuth();
 
   const history = useHistory();
 
   const schema = yup.object().shape({
-    username: yup.string().required("Nome de usuário obrigatório"),
+    email: yup.string().email("Email inválido").required("Campo obrigatório"),
     password: yup.string().required("Senha obrigatória"),
   });
 
   const {
     register,
     handleSubmit,
-    reset,
+
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmitFunction = (data) => {
-    logIn(data, history);
+    handleLogin(data, history);
   };
 
   return (
@@ -51,10 +51,10 @@ const Login = () => {
               <h3> Entre com seu usuário e senha</h3>
               <TextField
                 id="standard-basic"
-                label="Nome de usuário"
-                {...register("username")}
+                label="Email"
+                {...register("email")}
               />
-              <div className="error"> {errors.username?.message}</div>
+              <div className="error"> {errors.email?.message}</div>
 
               <TextField
                 id="standard-basic"
