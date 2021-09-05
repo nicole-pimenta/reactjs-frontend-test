@@ -111,10 +111,7 @@
       "name": "Rodolfo",
       "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
     },
-    {
-      "name": "Cedric Diggory",
-      "image": "http://hp-api.herokuapp.com/images/cedric.png"
-    },
+
     {
       "name": "Alex",
       "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
