@@ -1,15 +1,21 @@
 import { HomeContainer, HeroContainer, AboutContainer } from "./styles";
+import { useAuth } from "../../Providers/Auth";
 import Meeting from "../../assets/meeting.svg";
 import Meeting2 from "../../assets/meeting2.svg";
 import Ellipse1 from "../../assets/Ellipse1.svg";
 import Ellipse2 from "../../assets/Ellipse2.svg";
-
 import Animation from "../../assets/MeetingAnimation.json";
 import LottieAnimation from "../../components/Lotties";
 import HeaderMobile from "../../components/HeaderMobile";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const MeetingRoom = () => {
+  const { authenticated } = useAuth();
+
+  if (!authenticated) {
+    return <Redirect to="/login" />;
+  }
+
   return (
     <HomeContainer>
       <HeroContainer>

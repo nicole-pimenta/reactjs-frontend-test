@@ -9,14 +9,16 @@ import Button from "../../components/Button";
 import Animation from "../../assets/MeetingAnimation.json";
 import LottieAnimation from "../../components/Lotties";
 import HeaderMobile from "../../components/HeaderMobile";
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
+import { useAuth } from "../../Providers/Auth";
 
 const Home = () => {
+  const { authenticated } = useAuth();
   const history = useHistory();
 
-  const handleNavigation = (path) => {
-    history.push(path);
-  };
+  if (authenticated) {
+    return <Redirect to="/meeting" />;
+  }
 
   return (
     <HomeContainer>

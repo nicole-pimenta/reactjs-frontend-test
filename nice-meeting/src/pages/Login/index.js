@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 import TextField from "@material-ui/core/TextField";
 import { useAuth } from "../../Providers/Auth";
@@ -16,7 +16,7 @@ import {
 } from "./styles";
 
 const Login = () => {
-  const { handleLogin } = useAuth();
+  const { handleLogin, authenticated } = useAuth();
 
   const history = useHistory();
 
@@ -28,13 +28,16 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmitFunction = (data) => {
     handleLogin(data, history);
   };
+
+  if (authenticated) {
+    return <Redirect to="/meeting" />;
+  }
 
   return (
     <MainContainer>
@@ -78,7 +81,7 @@ const Login = () => {
           </AnimationContainer>
         </Content>
         <Background>
-          <section></section>
+          <section />
         </Background>
       </Container>
     </MainContainer>

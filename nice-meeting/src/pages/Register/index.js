@@ -2,10 +2,11 @@ import api from "../../services/api";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import { toast } from "react-toastify";
 import HomeIcon from "@material-ui/icons/Home";
 import TextField from "@material-ui/core/TextField";
+import { useAuth } from "../../Providers/Auth";
 import {
   Container,
   Background,
@@ -17,6 +18,7 @@ import {
 } from "./styles";
 
 const Register = () => {
+  const { authenticated } = useAuth();
   const history = useHistory();
 
   const schema = yup.object().shape({
@@ -48,6 +50,10 @@ const Register = () => {
       })
       .catch((err) => toast.error("Erro ao criar a conta ,tente outro email"));
   };
+
+  if (authenticated) {
+    return <Redirect to="/meeting" />;
+  }
 
   return (
     <MainContainer>
