@@ -42,8 +42,8 @@ const Home = () => {
           <img src={Ellipse1} alt="ellipse" />
         </div>
         <figure>
-          <img src={Meeting} alt="bulb" />
-          <img src={Meeting2} alt="bulb" />
+          <img src={Meeting} alt="person1" className="person1" />
+          <img src={Meeting2} alt="person2" />
         </figure>
         <div id="infoApp" className="aboutInfo">
           <h4>POR QUE NICEMEETING?</h4>

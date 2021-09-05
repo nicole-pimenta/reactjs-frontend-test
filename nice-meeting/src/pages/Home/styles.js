@@ -154,7 +154,8 @@ export const AboutContainer = styled.div`
     background-color: var(--lightViolet);
 
     .ellipse1,
-    .ellipse2 {
+    .ellipse2,
+    .person1 {
       display: none;
     }
 
@@ -163,7 +164,7 @@ export const AboutContainer = styled.div`
     }
 
     figure img {
-      width: 90%;
+      width: 80%;
     }
 
     .aboutInfo {

@@ -33,7 +33,7 @@ export const Container = styled.div`
   justify-content: stretch;
 
   @media (max-width: 1000px) {
-    height: 75vh;
+    height: 85vh;
   }
 `;
 
@@ -170,6 +170,10 @@ export const AnimationContainer = styled.div`
     form {
       text-align: center;
       height: 100%;
+
+      p {
+        font-size: 18px;
+      }
     }
     h1 {
       margin-bottom: 10px;

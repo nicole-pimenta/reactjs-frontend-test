@@ -7,7 +7,7 @@ export const HeaderContainer = styled.div`
   visibility: hidden;
   padding: 10px;
 
-  .easyHabits {
+  .niceMeeting {
     color: var(--violetCore);
     font-size: 2rem;
     font-weight: 600;
@@ -25,7 +25,7 @@ export const HeaderContainer = styled.div`
 
 export const HeaderNav = styled.div`
   width: 50vw;
-  min-height: 60vh;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;

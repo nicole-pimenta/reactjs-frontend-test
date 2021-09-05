@@ -1,43 +1,38 @@
-import { HomeContainer, HeroContainer, AboutContainer } from "./styles";
+import { MainContainer, SectionContainer, HeaderContainer } from "./styles";
 import { useAuth } from "../../Providers/Auth";
-import Meeting from "../../assets/meeting.svg";
-import Meeting2 from "../../assets/meeting2.svg";
-import Ellipse1 from "../../assets/Ellipse1.svg";
-import Ellipse2 from "../../assets/Ellipse2.svg";
-import Animation from "../../assets/MeetingAnimation.json";
-import LottieAnimation from "../../components/Lotties";
-import HeaderMobile from "../../components/HeaderMobile";
+import User from "../../assets/user.jpeg";
+import Button from "../../components/Button";
+import { useState } from "react";
 import { Redirect } from "react-router-dom";
+import { useGuests } from "../../Providers/Guests";
+import Card from "../../components/Card";
 
 const MeetingRoom = () => {
   const { authenticated } = useAuth();
+  const { addGuest, guestList, exitMeeting } = useGuests();
 
   if (!authenticated) {
     return <Redirect to="/login" />;
   }
 
   return (
-    <HomeContainer>
-      <HeroContainer>
-        <div className="heroInfo"></div>
-        <div className="lootie">
-          <LottieAnimation lotti={Animation} height={500} width={500} />
+    <MainContainer>
+      <HeaderContainer>
+        <div className="niceMeeting">NiceMeeting</div>
+      </HeaderContainer>
+      <SectionContainer>
+        <div className="owner">
+          <div className="user">
+            <img src={User} alt="owner" />
+          </div>
+          <div className="container-btn">
+            <Button onClick={addGuest}> Adicionar Participante</Button>
+            <Button onClick={exitMeeting}> Finalizar Reunião </Button>
+          </div>
         </div>
-      </HeroContainer>
-      <AboutContainer>
-        <div className="ellipse1">
-          <img src={Ellipse1} alt="ellipse" />
-        </div>
-        <figure>
-          <img src={Meeting} alt="bulb" />
-          <img src={Meeting2} alt="bulb" />
-        </figure>
-
-        <div className="ellipse2">
-          <img src={Ellipse2} alt="ellipse" />
-        </div>
-      </AboutContainer>
-    </HomeContainer>
+        <div className="public">{<Card guest={guestList}></Card>}</div>
+      </SectionContainer>
+    </MainContainer>
   );
 };
 

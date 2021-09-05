@@ -11,6 +11,7 @@ export const StyledButton = styled.button`
   font-weight: 600;
   font-size: 1.2rem;
   border-radius: 20.45px;
+  margin-right: 8px;
 
   &:hover {
     filter: brightness(1.1);
