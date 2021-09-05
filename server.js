@@ -10,6 +10,7 @@ app.db = router.db;
 const rules = auth.rewriter({
   "/users*": "/600/users$1",
   "/products*": "/640/products$1",
+  "/guests*": "/600/users$1",
 });
 
 var cors = require("cors");

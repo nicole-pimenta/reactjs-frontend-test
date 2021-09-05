@@ -93,5 +93,51 @@
       "category": "C",
       "id": 16
     }
+  ],
+  "guests": [
+    {
+      "name": "Harry Potter",
+      "image": "http://hp-api.herokuapp.com/images/harry.jpg"
+    },
+    {
+      "name": "Hermione Granger",
+      "image": "http://hp-api.herokuapp.com/images/hermione.jpeg"
+    },
+    {
+      "name": "Ron Weasley",
+      "image": "http://hp-api.herokuapp.com/images/ron.jpg"
+    },
+    {
+      "name": "Draco Malfoy",
+      "image": "http://hp-api.herokuapp.com/images/draco.jpg"
+    },
+    {
+      "name": "Cedric Diggory",
+      "image": "http://hp-api.herokuapp.com/images/cedric.png"
+    },
+    {
+      "name": "Cho Chang",
+      "image": "http://hp-api.herokuapp.com/images/cho.jpg"
+    },
+    {
+      "name": "Neville Longbottom",
+      "image": "http://hp-api.herokuapp.com/images/neville.jpg"
+    },
+    {
+      "name": "Luna Lovegood",
+      "image": "http://hp-api.herokuapp.com/images/luna.jpg"
+    },
+    {
+      "name": "Ginny Weasley",
+      "image": "http://hp-api.herokuapp.com/images/ginny.jpg"
+    },
+    {
+      "name": "Vincent Crabbe",
+      "image": "http://hp-api.herokuapp.com/images/crabbe.jpg"
+    },
+    {
+      "name": "Gregory Goyle",
+      "image": "http://hp-api.herokuapp.com/images/goyle.jpg"
+    }
   ]
 }
