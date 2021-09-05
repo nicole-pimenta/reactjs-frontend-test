@@ -7,7 +7,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const token = localStorage.getItem("NiceMeeting:token") || "";
-  const [auth, setAuth] = useState(token);
+  //const [auth, setAuth] = useState(token);
 
   const [authenticated, setAuthenticated] = useState(false);
 
@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
       .then((response) => {
         const token = response.data.accessToken;
         localStorage.setItem("NiceMeeting:token", JSON.stringify(token));
-        setAuth(token);
+        //setAuth(token);
         setAuthenticated(true);
         toast.success("Sucesso ao logar");
         return history.push("/meeting");

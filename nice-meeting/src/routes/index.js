@@ -1,9 +1,9 @@
 import { Switch, Route } from "react-router-dom";
-//import Route from "./route";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import MeetingRoom from "../pages/MeetingRoom";
+import PageNotFound from "../pages/PageNotFound";
 
 const Routes = () => {
   return (
@@ -19,6 +19,9 @@ const Routes = () => {
       </Route>
       <Route path="/meeting">
         <MeetingRoom />
+      </Route>
+      <Route>
+        <PageNotFound />
       </Route>
     </Switch>
   );
