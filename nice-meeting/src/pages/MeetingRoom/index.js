@@ -1,15 +1,21 @@
-import { MainContainer, SectionContainer, HeaderContainer } from "./styles";
+import {
+  MainContainer,
+  SectionContainer,
+  HeaderContainer,
+  Button,
+} from "./styles";
 import { useAuth } from "../../Providers/Auth";
 import User from "../../assets/user.jpeg";
-import Button from "../../components/Button";
-import { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useGuests } from "../../Providers/Guests";
 import Card from "../../components/Card";
+import { Badge } from "@material-ui/core";
+import { FaUser } from "react-icons/fa";
+//import jwt_decode from "jwt-decode";
 
 const MeetingRoom = () => {
   const { authenticated } = useAuth();
-  const { addGuest, guestList, exitMeeting } = useGuests();
+  const { addGuest, guestList, exitMeeting, removeGuest } = useGuests();
 
   if (!authenticated) {
     return <Redirect to="/login" />;
@@ -19,6 +25,12 @@ const MeetingRoom = () => {
     <MainContainer>
       <HeaderContainer>
         <div className="niceMeeting">NiceMeeting</div>
+        <div>
+          <span>Participantes </span>
+          <Badge badgeContent={guestList.length} color="secondary">
+            <FaUser />
+          </Badge>
+        </div>
       </HeaderContainer>
       <SectionContainer>
         <div className="owner">
@@ -30,7 +42,9 @@ const MeetingRoom = () => {
             <Button onClick={exitMeeting}> Finalizar Reunião </Button>
           </div>
         </div>
-        <div className="public">{<Card guest={guestList}></Card>}</div>
+        <div className="public">
+          {<Card guest={guestList} handleRemove={removeGuest}></Card>}
+        </div>
       </SectionContainer>
     </MainContainer>
   );

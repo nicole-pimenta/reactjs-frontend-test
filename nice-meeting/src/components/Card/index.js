@@ -1,20 +1,20 @@
 import { CardContainer, Cards, Button } from "./styles";
 
-const Card = ({ guest }) => {
-  console.log(guest);
+const Card = ({ guest, handleRemove }) => {
   return (
     <CardContainer>
-      {guest.length < 7
-        ? guest.map((ele) => (
-            <Cards>
-              <figure>
-                <img src={ele.image}></img>
-              </figure>
-              <p>{ele.name}</p>
-              <Button colorSchema> Remover Participante</Button>
-            </Cards>
-          ))
-        : null}
+      {guest.map((ele) => (
+        <Cards>
+          <figure>
+            <img alt="guest" src={ele.image}></img>
+          </figure>
+          <p>{ele.name}</p>
+          <Button colorSchema onClick={() => handleRemove(ele)}>
+            {" "}
+            Remover Participante
+          </Button>
+        </Cards>
+      ))}
     </CardContainer>
   );
 };

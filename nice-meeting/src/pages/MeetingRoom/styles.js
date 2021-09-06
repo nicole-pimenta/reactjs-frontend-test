@@ -10,7 +10,13 @@ export const MainContainer = styled.div`
 export const HeaderContainer = styled.div`
   height: 10vh;
   padding: 20px 70px 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
 
+  div {
+    color: white;
+  }
   .niceMeeting {
     color: var(--violetCore);
     font-size: 2rem;
@@ -76,6 +82,7 @@ export const SectionContainer = styled.div`
       background-color: var(--brown);
       border-radius: 20px;
       border:2px solid white;
+      overflow: scroll;
     }
   }
 
@@ -99,5 +106,26 @@ export const SectionContainer = styled.div`
     
   } 
 
- 
+`;
+
+export const Button = styled.div`
+  background-color: var(--violetLight);
+  color: black;
+  border: none;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 20.45px;
+  cursor: pointer;
+  margin: 5px auto;
+
+  &:hover {
+    filter: brightness(1.1);
+    transition: all 250ms linear;
+  }
+
+  &:active {
+    transition: all 150ms linear;
+  }
 `;
